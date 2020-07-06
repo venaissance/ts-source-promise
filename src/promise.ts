@@ -60,15 +60,15 @@ function nextTick(fn) {
         return process.nextTick(fn);
     } else {
         // 实现浏览器上的nextTick
-        var couter = 1;
+        var counter = 1;
         var observer = new MutationObserver(fn);
-        var textNode = document.createTextNode(String(couter));
+        var textNode = document.createTextNode(String(counter));
 
         observer.observe(textNode, {
             characterData: true
         });
-        couter += 1;
-        textNode.data = String(couter);
+        counter += 1;
+        textNode.data = String(counter);
     }
 }
 
