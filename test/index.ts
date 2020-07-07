@@ -132,7 +132,7 @@ describe('Promise', () => {
             done();
         }, 0);
     });
-    it("2.2.5 onFulfilled和onRejected必须被当做函数调用", done => {
+    it("2.2.5 onFulfilled(succeed)和onRejected(fail)必须被当做函数调用，且this为undefined", done => {
         const promise = new Promise(resolve => {
             resolve();
         });
